@@ -47,6 +47,7 @@ class Task():
                                         logText = self.logText
                 ))
 
+
         # 唤醒
         self.wake()
         print('monkey参数配置: ' + self.commandStr)

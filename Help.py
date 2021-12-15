@@ -1,7 +1,6 @@
 from tkinter import END, BOTH, YES
 from tkinter.scrolledtext import ScrolledText
 
-import tk as tk
 
 #帮助界面
 class Help:

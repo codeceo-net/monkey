@@ -1,7 +1,4 @@
 from tkinter import END, BOTH, YES, Label
-from tkinter.scrolledtext import ScrolledText
-
-import tk as tk
 
 #关于我们
 class About:
@@ -12,7 +9,7 @@ class About:
     def initAbout(self):
         # 文本域
         aboutText = "基于android monkey自带的性能测试工具整合的GUI测试工具\n"
-        aboutText += "版本：1.0.0.123\n"
+        aboutText += "版本：1.0.145\n"
         aboutText += "Copyright © lion.vinno All rights reserved.\n"
         label = Label(self.win, text=aboutText,
                          bg='#ffffff', fg='black',  # bg为背景色，fg为前景色

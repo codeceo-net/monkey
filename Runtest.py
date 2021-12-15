@@ -35,24 +35,25 @@ class Runtest:
 
         device = self.main.entryDevice.get().strip()
 
-        testPerson = self.main.testPerson.get().strip()
-        if len(testPerson) <= 0:
-            messagebox.showwarning("提示", "请填写测试人员")
-            return
-        modulename = self.main.modulename.get().strip()
-        if len(modulename) <= 0:
-            messagebox.showwarning("提示", "请填写项目名称")
-            return
-        apkversion = self.main.apkversion.get().strip()
-        if len(apkversion) <= 0:
-            messagebox.showwarning("提示", "请填写版本号")
-            return
+        # testPerson = self.main.testPerson.get().strip()
+        # if len(testPerson) <= 0:
+        #     messagebox.showwarning("提示", "请填写测试人员")
+        #     return
+        # modulename = self.main.modulename.get().strip()
+        # if len(modulename) <= 0:
+        #     messagebox.showwarning("提示", "请填写项目名称")
+        #     return
+        # apkversion = self.main.apkversion.get().strip()
+        # if len(apkversion) <= 0:
+        #     messagebox.showwarning("提示", "请填写版本号")
+        #     return
 
         logPath = self.main.logPath.get().strip()
         self.screen_save_path = logPath + '/screenshots/'
         self.reports_path = logPath + '/reports/'
         self.monkey_path = logPath + '/monkeylogs/'
-        result = Task(device, apkversion, modulename, testPerson, self.screen_save_path, self.reports_path,
+
+        result = Task(device, "1.0.0", "健康一体机", "test01", self.screen_save_path, self.reports_path,
                       self.monkey_path, commandStr, self.main.text).start()
         self.main.text.insert(tk.END, "\n结果:执行完成")
         self.main.text.see(tk.END)
@@ -65,24 +66,24 @@ class Runtest:
             return
         device = self.main.entryDevice.get().strip()
 
-        testPerson = self.main.testPerson.get().strip()
-        if len( testPerson ) <= 0:
-            messagebox.showwarning("提示", "请填写测试人员")
-            return
-        modulename = self.main.modulename.get().strip()
-        if len( modulename ) <= 0 :
-            messagebox.showwarning("提示", "请填写项目名称")
-            return
-        apkversion = self.main.apkversion.get().strip()
-        if len(apkversion) <= 0:
-            messagebox.showwarning("提示", "请填写版本号")
-            return
+        # testPerson = self.main.testPerson.get().strip()
+        # if len( testPerson ) <= 0:
+        #     messagebox.showwarning("提示", "请填写测试人员")
+        #     return
+        # modulename = self.main.modulename.get().strip()
+        # if len( modulename ) <= 0 :
+        #     messagebox.showwarning("提示", "请填写项目名称")
+        #     return
+        # apkversion = self.main.apkversion.get().strip()
+        # if len(apkversion) <= 0:
+        #     messagebox.showwarning("提示", "请填写版本号")
+        #     return
 
         logPath = self.main.logPath.get().strip()
         self.screen_save_path = logPath + '/screenshots/'
         self.reports_path = logPath + '/reports/'
         self.monkey_path = logPath + '/monkeylogs/'
-        result = Task(device, apkversion, modulename ,testPerson ,self.screen_save_path,self.reports_path ,self.monkey_path , commandStr,self.main.text).start()
+        result = Task(device, "1.0", "健康一体机" ,"test01" ,self.screen_save_path,self.reports_path ,self.monkey_path , commandStr,self.main.text).start()
         self.main.text.insert(tk.END, "\n结果:执行完成")
         self.main.text.see(tk.END)
 
@@ -116,12 +117,15 @@ class Runtest:
         self.screen_save_path = logPath + '/screenshots/'
         self.reports_path = logPath + '/reports/'
         self.monkey_path = logPath + '/monkeylogs/'
+        self.chkbugreport_path = logPath + '/chkbugreport/'
         if not os.path.exists(self.screen_save_path):
             os.makedirs(self.screen_save_path)
         if not os.path.exists(self.reports_path):
             os.makedirs(self.reports_path)
         if not os.path.exists(self.monkey_path):
             os.makedirs(self.monkey_path)
+        if not os.path.exists(self.chkbugreport_path):
+            os.makedirs(self.chkbugreport_path)
 
         self.LogLevelStr = self.main.getLogLevelStr()
 
